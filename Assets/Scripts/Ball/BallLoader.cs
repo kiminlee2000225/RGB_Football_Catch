@@ -7,6 +7,7 @@ public class BallLoader : MonoBehaviour
     public Dictionary<int, Ball> ballsDict;
     public GameObject ballPrefab;
 
+    // Set these values in the inspector
     public float redBallVelocity;
     public float greenBallVelocity;
     public float blueBallVelocity;

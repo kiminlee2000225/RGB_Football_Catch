@@ -167,6 +167,7 @@ MonoBehaviour:
   mediumTimerThreshold: 15
   hardTimerThreshold: 30
   increasePointThreshold: 5
+  highscore: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +542,7 @@ Transform:
   - {fileID: 1406569866}
   - {fileID: 1114429382}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1987694312
 MonoBehaviour:
@@ -575,6 +576,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPosition: {fileID: 1406569866}
   shootBallParent: {fileID: 1114429382}
+  easyInterval: 4
+  mediumInterval: 2
+  hardInterval: 0.5
 --- !u!1 &2028732183
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2028732184}
   m_Layer: 0
-  m_Name: LevelEssentials
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,14 +602,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028732183}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 597351449}
   - {fileID: 735027733}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113215052
 GameObject:

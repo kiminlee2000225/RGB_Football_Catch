@@ -7,7 +7,7 @@ public class Ball
  *  we can utilize an enum as a new field and json variable for the programmers to easily indicate 
  *  the color of the ball without mentall connecting an integer to a color. 
  *  
- *  name is the name of the Ball. 
+ *  name is the name of the Ball, indicated by its color. 
  *  
  *  colorHex is the color of the ball in a hexadecimal code format.
 */

@@ -2,8 +2,9 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float runSpeed = 10f;
+    // Set these values in the inspector
+    public float moveSpeed;
+    public float runSpeed;
 
     private bool isRunning;
 

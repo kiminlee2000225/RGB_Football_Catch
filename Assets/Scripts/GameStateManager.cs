@@ -6,13 +6,16 @@ public class GameStateManager : MonoBehaviour
     public static int currentScoreIncrement;
     public static bool isGameOver;
     public static float timer;
-    public static int difficulty; // There are 3 difficulties of 0, 1, and 2. The difficulty increases with increasing int. 
+    public static int difficulty; // There are 3 difficulties of 0, 1, and 2. 0 = easy, 1 = medium, 2 = hard difficulty.
+    public static int highscore;
 
     // These timer thresholds will determine when the difficulty of the game will increase.
     // For example, after the game timer reaches mediumTimerThreshold, the game will transition to a medium difficulty level. 
+    // Set these values in the inspector
     public float mediumTimerThreshold;
     public float hardTimerThreshold;
 
+    // Set this value in the inspector
     public int increasePointThreshold;
     private int thresholdCount = 0;
 
