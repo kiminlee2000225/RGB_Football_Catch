@@ -64,11 +64,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BallBehavior.cs" />
+    <Compile Include="Assets\Scripts\Ball\Ball.cs" />
+    <Compile Include="Assets\Scripts\Ball\BallBehavior.cs" />
+    <Compile Include="Assets\Scripts\Ball\BallList.cs" />
+    <Compile Include="Assets\Scripts\Ball\BallLoader.cs" />
+    <Compile Include="Assets\Scripts\Ball\ShootBalls.cs" />
     <Compile Include="Assets\Scripts\GameStateManager.cs" />
-    <Compile Include="Assets\Scripts\MouseCameraView.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\ShootBalls.cs" />
+    <Compile Include="Assets\Scripts\JSON\JSONFileReader.cs" />
+    <Compile Include="Assets\Scripts\Player\MouseCameraView.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -1,0 +1,19 @@
+{
+    "balls": [
+        {
+            "ballId":"0",
+            "name":"RedBall",
+            "colorHex":"#FF0000"
+        },
+        {
+            "ballId":"1",
+            "name":"GreenBall",
+            "colorHex":"#00FF00"
+        },
+        {
+            "ballId":"2",
+            "name":"BlueBall",
+            "colorHex":"#0000FF"
+        }
+    ]
+}
