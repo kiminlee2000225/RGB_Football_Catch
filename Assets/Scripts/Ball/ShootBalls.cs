@@ -23,7 +23,7 @@ public class ShootBalls : MonoBehaviour
     // Generate and shoot the ball when the machine is not waiting for a time interval to shoot a new ball.
     void Update()
     {
-        if (!waitToShoot)
+        if (!waitToShoot && !GameStateManager.isGameOver)
         {
             SetWaitTimeAndShoot();
         }

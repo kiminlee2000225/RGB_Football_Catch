@@ -26,14 +26,17 @@ public class PlayerMovement : MonoBehaviour
     */
     void Update()
     {
-        isRunning = Input.GetKey(KeyCode.LeftShift);
+        if (!GameStateManager.isGameOver)
+        {
+            isRunning = Input.GetKey(KeyCode.LeftShift);
 
-        float moveVertical = Input.GetAxis("Vertical");
-        var input = transform.forward * moveVertical;
-        input *= isRunning ? runSpeed : moveSpeed;
-        moveDirection = input;
+            float moveVertical = Input.GetAxis("Vertical");
+            var input = transform.forward * moveVertical;
+            input *= isRunning ? runSpeed : moveSpeed;
+            moveDirection = input;
 
-        controller.Move(moveDirection * Time.deltaTime);
+            controller.Move(moveDirection * Time.deltaTime);
+        }
     }
 
     /*   

@@ -18,7 +18,7 @@ public class BallBehavior : MonoBehaviour
     */
     private void OnTriggerEnter(Collider other)
     {
-        if (!triggered)
+        if (!triggered && !GameStateManager.isGameOver)
         {
             triggered = true;
             switch (other.name)

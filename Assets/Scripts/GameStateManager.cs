@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -34,8 +35,17 @@ public class GameStateManager : MonoBehaviour
 
     void Update()
     {
-        SetCurrentScoreIncrement();
-        ManageTimerAndDifficulty();
+        if (!isGameOver)
+        {
+            SetCurrentScoreIncrement();
+            ManageTimerAndDifficulty();
+        } else
+        {
+            if (currentScore > highscore && UIManager.highScoreDisplayed)
+            {
+                highscore = currentScore;
+            }
+        }
     }
 
     /*   
@@ -66,5 +76,10 @@ public class GameStateManager : MonoBehaviour
         {
             difficulty++;
         }
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

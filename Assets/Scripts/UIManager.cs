@@ -9,19 +9,50 @@ public class UIManager : MonoBehaviour
     public TMP_Text currentDifficultyText;
     public TMP_Text ballPointWorthText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    public GameObject inGameUIPanel;
+    public GameObject gameOverUIPanel;
 
+    public TMP_Text isHighscoreUpdatedText;
+    public TMP_Text gameOverHighscoreText;
+
+    public static bool highScoreDisplayed; // Determines if the highscore UI for the GameOverPanel is shown or not
+
+    // Set highScoreDisplayed to false and deactivate the gameOverUIPanel. Activate the inGameUIPanel when game starts. 
+    private void Start()
+    {
+        highScoreDisplayed = false;
+        inGameUIPanel.SetActive(true);
+        gameOverUIPanel.SetActive(false);
     }
 
-    // Update is called once per frame
+    /* 
+     * Set the text values for the TMP components to be shown on the UI. 
+     * The UI should represent the player's highscore, current score, the game's 
+     * current difficulty, and how many points a ball is currently worth. 
+     * 
+     * If the player is unable to catch any ball, it is game over. Display the 
+     * GameOverUI and unlock the cursor for free movement. Show if the player
+     * received a highscore or not. Either way, display the highscore and the score
+     * the player got during the playthrough.
+    */
     void Update()
     {
         highscoreText.text = GetHighscoreString();
         currentScoreText.text = GetCurrentScoreString();
         currentDifficultyText.text = GetDifficultyString();
         ballPointWorthText.text = GetBallPointWorthString();
+
+        if (GameStateManager.isGameOver && !highScoreDisplayed)
+        {
+            gameOverUIPanel.SetActive(true);
+            inGameUIPanel.SetActive(false);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+            isHighscoreUpdatedText.text = GetIsHighscoreUpdatedString();
+            gameOverHighscoreText.text = GetUpdatedHighscoreString();
+            highScoreDisplayed = true;
+        }
     }
 
     /* 
@@ -56,7 +87,7 @@ public class UIManager : MonoBehaviour
     private string GetDifficultyString()
     {
         string difficulty = "Current Difficulty: ";
-        switch(GameStateManager.difficulty)
+        switch (GameStateManager.difficulty)
         {
             case 0:
                 difficulty += "Easy";
@@ -87,6 +118,42 @@ public class UIManager : MonoBehaviour
             worthString += "s";
         }
         return worthString + "!";
-        
+
+    }
+
+    /* 
+     * <returns>A string that represents the score and if the player earned is a highscore or not.</returns>
+     * 
+     * Returns the point worth of the ball in the format of "Score: [INTEGER]" or 
+     * "Score: [INTEGER] - New Highscore!". 
+    */
+    private string GetIsHighscoreUpdatedString()
+    {
+        string text = "Score: " + GameStateManager.currentScore;
+        if (GameStateManager.currentScore > GameStateManager.highscore)
+        {
+            text += " - New Highscore!";
+        }
+        return text;
+    }
+
+    /* 
+     * <returns>A string that represents the highscore when the game is over.</returns>
+     * 
+     * Returns the point worth of the ball in the format of "Highscore: [INTEGER]".
+     * The text shows the player's score if the player was able to achieve a highscore.
+     * Otherwise, it shows the saved highscore. 
+     */
+    private string GetUpdatedHighscoreString()
+    {
+        string text = "Highscore: ";
+        if (GameStateManager.currentScore > GameStateManager.highscore)
+        {
+            text += GameStateManager.currentScore;
+        } else
+        {
+            text += GameStateManager.highscore;
+        }
+        return text;
     }
 }
