@@ -17,7 +17,8 @@ public class GameStateManager : MonoBehaviour
 
     // Set this value in the inspector
     public int increasePointThreshold;
-    private int thresholdCount = 0;
+    public static int thresholdCount; // Determines when to increase the ball point worth.
+    public static bool justIncremented; // Is true if the ball point worth has just increased. Is false if another ball is caught.
 
     // Set all fields to its original state for when the game starts or is restarted. 
     void Start()
@@ -38,13 +39,14 @@ public class GameStateManager : MonoBehaviour
 
     /*   
     *   Check and determine the point(s) that the player will gain when collecting a ball. 
-    *   After every 5 points earned, the next point earned is increased by 1. 
+    *   After every 5 balls have been collected, the next point earned is increased by 1. 
+    *   In other words, the ball point worth is increased by 1 after every 5 balls caught. 
     */
     private void SetCurrentScoreIncrement()
     {
-        if (thresholdCount == increasePointThreshold)
+        if(currentScore % increasePointThreshold == 0 && !justIncremented && currentScore != 0)
         {
-            thresholdCount = 0;
+            justIncremented = true;
             currentScoreIncrement++;
         }
     }

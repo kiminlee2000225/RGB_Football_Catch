@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MouseCameraView : MonoBehaviour
 {
-    public float mouseSensitivity = 80f;
-    private float rotation = 0;
+    public float mouseSensitivity;
+    private float rotation;
 
     // Lock the cursor and make it invisible, since the player will not have to utilize the mouse during gameplay.
     void Start()
