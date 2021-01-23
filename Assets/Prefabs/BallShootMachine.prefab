@@ -111,9 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPosition: {fileID: 5195677052796143039}
   shootBallParent: {fileID: 5195677053041139699}
-  easyInterval: 4
-  mediumInterval: 2
-  hardInterval: 0.5
+  easyInterval: 2.5
+  mediumInterval: 1.5
+  hardInterval: 1
 --- !u!114 &5195677052304312029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,9 +129,9 @@ MonoBehaviour:
   jsonFilePath: BallInfo.json
   ballPrefab: {fileID: 4559450729270920368, guid: dca35664b60c6ca458253c662908ba21,
     type: 3}
-  redBallVelocity: 1000
-  greenBallVelocity: 1500
-  blueBallVelocity: 2000
+  redBallVelocity: 1200
+  greenBallVelocity: 1350
+  blueBallVelocity: 1500
 --- !u!1 &5195677052796143036
 GameObject:
   m_ObjectHideFlags: 0

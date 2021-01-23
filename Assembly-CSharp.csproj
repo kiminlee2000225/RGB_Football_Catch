@@ -69,12 +69,14 @@
     <Compile Include="Assets\Scripts\Ball\BallList.cs" />
     <Compile Include="Assets\Scripts\Ball\BallLoader.cs" />
     <Compile Include="Assets\Scripts\Ball\ShootBalls.cs" />
-    <Compile Include="Assets\Scripts\GameStateManager.cs" />
+    <Compile Include="Assets\Scripts\Ground\TogleHelp.cs" />
     <Compile Include="Assets\Scripts\JSON\JSONFileReader.cs" />
+    <Compile Include="Assets\Scripts\Manager\GameStateManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\SaveManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Scripts\Player\MouseCameraView.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\UIManager.cs" />
-    <Compile Include="Assets\TogleHelp.cs" />
+    <Compile Include="Assets\Scripts\Save\Save.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
