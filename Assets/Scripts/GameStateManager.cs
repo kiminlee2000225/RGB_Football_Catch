@@ -7,7 +7,7 @@ public class GameStateManager : MonoBehaviour
     public static bool isGameOver;
     public static float timer;
     public static int difficulty; // There are 3 difficulties of 0, 1, and 2. 0 = easy, 1 = medium, 2 = hard difficulty.
-    public static int highscore;
+    public static int highscore; // The highscore should be set to 0 if it is the player's first time playing.
 
     // These timer thresholds will determine when the difficulty of the game will increase.
     // For example, after the game timer reaches mediumTimerThreshold, the game will transition to a medium difficulty level. 
@@ -17,7 +17,8 @@ public class GameStateManager : MonoBehaviour
 
     // Set this value in the inspector
     public int increasePointThreshold;
-    public static int thresholdCount; // Determines when to increase the ball point worth.
+    public static int thresholdCount
+        ; // Determines when to increase the ball point worth.
     public static bool justIncremented; // Is true if the ball point worth has just increased. Is false if another ball is caught.
 
     // Set all fields to its original state for when the game starts or is restarted. 

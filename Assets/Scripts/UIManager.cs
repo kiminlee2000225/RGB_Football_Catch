@@ -18,30 +18,75 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        highscoreText.text = "Highscore: " + GameStateManager.highscore.ToString();
-        currentScoreText.text = "Current Score: " + GameStateManager.currentScore.ToString();
-        currentDifficultyText.text = "Current Difficulty: " + GetDifficultyString();
-        ballPointWorthText.text = "A Ball is worth " + GameStateManager.currentScoreIncrement.ToString() + " points!";
+        highscoreText.text = GetHighscoreString();
+        currentScoreText.text = GetCurrentScoreString();
+        currentDifficultyText.text = GetDifficultyString();
+        ballPointWorthText.text = GetBallPointWorthString();
     }
 
-    // Returns the difficulty depending on the int representation in GameStateManger. Easy, Medium, or Hard. 
+    /* 
+     * <returns>A string that represents the highscore.</returns>
+     * 
+     * The highscore represents the highest score that the player has been able to achieve
+     * in the past. The highscore should be 0 if it is the player's first time playing. 
+     * The format is "Highscore: [INTEGER]".
+    */
+    private string GetHighscoreString()
+    {
+        return "Highscore: " + GameStateManager.highscore.ToString();
+    }
+
+    /* 
+     * <returns>A string that represents the current score.</returns>
+     * 
+     * The current score represents how many balls the player has caught. 
+     * The format is "Current Score: [INTEGER]".
+    */
+    private string GetCurrentScoreString()
+    {
+        return "Current Score: " + GameStateManager.currentScore.ToString();
+    }
+
+    /* 
+     * <returns>A string that represents the difficulty of the game.</returns>
+     * 
+     * Returns the difficulty depending on the int representation in GameStateManger. Easy, Medium, or Hard. 
+     * The format is "Current Difficulty: [STRING]". 
+    */
     private string GetDifficultyString()
     {
-        string difficulty = "";
+        string difficulty = "Current Difficulty: ";
         switch(GameStateManager.difficulty)
         {
             case 0:
-                difficulty = "Easy";
+                difficulty += "Easy";
                 break;
             case 1:
-                difficulty = "Medium";
+                difficulty += "Medium";
                 break;
             case 2:
-                difficulty = "Hard";
+                difficulty += "Hard";
                 break;
             default:
                 break;
         }
         return difficulty;
+    }
+
+    /* 
+     * <returns>A string that represents the number of points a ball is worth.</returns>
+     * 
+     * Returns the point worth of the ball in the format of "[INTEGER] point!" or "[INTEGER] points!". 
+     * A "s" is added at the end before the "!" if the point worth is more than 1 to make it plural. 
+    */
+    private string GetBallPointWorthString()
+    {
+        string worthString = "A Ball is worth " + GameStateManager.currentScoreIncrement.ToString() + " point";
+        if (GameStateManager.currentScoreIncrement > 1)
+        {
+            worthString += "s";
+        }
+        return worthString + "!";
+        
     }
 }
