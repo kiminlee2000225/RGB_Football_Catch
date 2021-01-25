@@ -611,4 +611,5 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/GameScene.unity
-  playerPath: C:/Users/PS Donation/Documents/RGB Football Catch.exe
+  playerPath: C:/Users/PS Donation/Documents/RGB_Football_Catch_Game/RGB Football
+    Catch.exe

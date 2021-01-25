@@ -114,6 +114,7 @@ MonoBehaviour:
   easyInterval: 2.5
   mediumInterval: 1.8
   hardInterval: 1.3
+  initialWaitTime: 3
 --- !u!114 &5195677052304312029
 MonoBehaviour:
   m_ObjectHideFlags: 0

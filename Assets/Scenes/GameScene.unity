@@ -3027,6 +3027,11 @@ PrefabInstance:
       propertyPath: canHit.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 5195677052304312028, guid: f6fed10317cc8d844adf7ca5c02e52fe,
+        type: 3}
+      propertyPath: initialWaitTime
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5195677052304312029, guid: f6fed10317cc8d844adf7ca5c02e52fe,
         type: 3}
       propertyPath: blueBallVelocity
