@@ -36,17 +36,19 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = input;
 
             controller.Move(moveDirection * Time.deltaTime);
+        } else
+        {
+            GameOver();
         }
     }
 
     /*   
-     *   When this method is called, it indicates that the game is over, so the player controller and
-     *   rigidbody collisions are disabled.
+     *   When this method is called, it indicates that the game is over, so the player controller 
+     *   (character controller) is disabled.
      */
     public void GameOver()
     {
         controller.enabled = false;
-        rb.detectCollisions = false;
     }
 
 }

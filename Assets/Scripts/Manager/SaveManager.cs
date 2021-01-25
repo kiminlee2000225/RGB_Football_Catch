@@ -44,9 +44,6 @@ public class SaveManager : MonoBehaviour
             string json = File.ReadAllText(fullPath);
             Save save = JsonUtility.FromJson<Save>(json);
             GameStateManager.highscore = save.highscore;
-        } else
-        {
-            Debug.Log("There are no existing save files!");
         }
     }
 }

@@ -20,7 +20,10 @@ public class ShootBalls : MonoBehaviour
         ballLoader = GetComponent<BallLoader>();
     }
 
-    // Generate and shoot the ball when the machine is not waiting for a time interval to shoot a new ball.
+    /*   
+    *  Generate and shoot the ball when the machine is not waiting for a time interval to shoot a new ball.
+    *   Do not generate and shoot balls if the game is over. 
+    */
     void Update()
     {
         if (!waitToShoot && !GameStateManager.isGameOver)

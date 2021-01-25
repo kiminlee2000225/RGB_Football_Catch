@@ -112,8 +112,8 @@ MonoBehaviour:
   shootPosition: {fileID: 5195677052796143039}
   shootBallParent: {fileID: 5195677053041139699}
   easyInterval: 2.5
-  mediumInterval: 1.5
-  hardInterval: 1
+  mediumInterval: 1.8
+  hardInterval: 1.3
 --- !u!114 &5195677052304312029
 MonoBehaviour:
   m_ObjectHideFlags: 0

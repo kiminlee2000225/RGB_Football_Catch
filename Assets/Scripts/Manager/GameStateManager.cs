@@ -85,10 +85,7 @@ public class GameStateManager : MonoBehaviour
     private void ManageTimerAndDifficulty()
     {
         timer += Time.deltaTime;
-        if (timer > mediumTimerThreshold && difficulty == 0)
-        {
-            difficulty++;
-        } else if (timer > hardTimerThreshold && difficulty == 1)
+        if ((timer > mediumTimerThreshold && difficulty == 0) || (timer > hardTimerThreshold && difficulty == 1))
         {
             difficulty++;
         }
@@ -100,5 +97,13 @@ public class GameStateManager : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    /*   
+    *   Exists the game. This will be utilized for the "Exit Game" button. 
+    */
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

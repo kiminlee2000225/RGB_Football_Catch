@@ -69,7 +69,7 @@
     <Compile Include="Assets\Scripts\Ball\BallList.cs" />
     <Compile Include="Assets\Scripts\Ball\BallLoader.cs" />
     <Compile Include="Assets\Scripts\Ball\ShootBalls.cs" />
-    <Compile Include="Assets\Scripts\Ground\TogleHelp.cs" />
+    <Compile Include="Assets\Scripts\Ground\AssistMode.cs" />
     <Compile Include="Assets\Scripts\JSON\JSONFileReader.cs" />
     <Compile Include="Assets\Scripts\Manager\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\Manager\SaveManager.cs" />

@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafc80419d5d9cb4e9ceb1520982589b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helper: {fileID: 53198813664747363}
+  assist: {fileID: 53198813664747363}
 --- !u!1 &53198813664747363
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 53198813664747362}
   m_Layer: 5
-  m_Name: Helper
+  m_Name: Assist
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
